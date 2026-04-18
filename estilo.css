@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0d0d0d;
+    color: #e0e0e0; /* Color gris claro para texto general */
+}
+
+/* HERO CONTENEDOR */
+.hero {
+    height: 80vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* IMAGEN DE FONDO (CAPA ANIMADA) */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('https://i.pinimg.com/736x/1a/ab/0c/1aab0cb5d67def8367f524107d492caf.jpg') no-repeat center center;
+    background-size: cover;
+
+    filter: blur(8px);
+    transform: scale(1.1);
+
+    animation: movimientoFondo 20s ease-in-out infinite alternate;
+
+    z-index: 0;
+}
+
+/* CAPA OSCURA */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+/* TEXTO ENCIMA */
+.hero-text {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #ff2e88; /* Rosa brillante para el título */
+    text-shadow: 0 0 10px #ff2e88;
+}
+
+.hero p {
+    margin-top: 10px;
+    opacity: 0.8;
+    color: #ffffff; /* Blanco para el subtítulo */
+}
+
+/* BIO */
+.bio {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.bio h2 {
+    color: #ff2e88; /* Rosa brillante */
+}
+
+.bio p {
+    color: #fff; /* Blanco para el contenido */
+}
+
+/* CONTENEDOR */
+.contenedor {
+    padding: 40px 20px;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffffff; /* Blanco para los títulos de sección */
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: #1a1a1a;
+    width: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(255, 46, 136, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(255, 46, 136, 0.4);
+}
+
+.card img {
+    width: 100%;
+}
+
+.card-texto {
+    padding: 15px;
+}
+
+.card-texto h3 {
+    color: #ff2e88; /* Rosa brillante */
+}
+
+.card-texto p {
+    color: #fff; /* Blanco para el texto del contenido */
+}
+
+/* ÚLTIMOS */
+.ultimos {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.ultimos h2 {
+    color: #ffffff; /* Blanco para el título */
+}
+
+.lista-chismes p {
+    margin: 10px 0;
+    color: #ffffff; /* Blanco para los párrafos */
+    opacity: 0.8;
+}
+
+/* CONTACTO */
+.contacto {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.contacto h2 {
+    color: #ffffff; /* Blanco para el título */
+}
+
+.contacto p {
+    color: #fff; /* Blanco para el contenido */
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: #ff2e88;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ff0066;
+    box-shadow: 0 0 15px #ff2e88;
+}
+
+/* FOOTER */
+footer {
+    background: #000;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    color: #fff; /* Blanco para el footer */
+}
+
+/* ANIMACIONES SCROLL */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
